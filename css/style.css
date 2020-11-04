@@ -1,0 +1,159 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background: #222;
+}
+
+a, a:visited, a:hover, a:active {
+    color:#fff;
+}
+
+#noscript-message, #device-warning {
+    width: 250px;
+    color: white;
+    font-family: Caslon;
+    font-size: 32px;
+    font-weight: 100;
+
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+#device-warning {
+    display: none;
+}
+
+#timeline {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+#year-arrow {
+    width: 0px;
+    height: 0px;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 40px solid black;
+
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+}
+
+#timeline-wrapper > * {
+    z-index: 2;
+}
+
+#timeline-wrapper:hover * {
+    opacity: 1;
+}
+
+#timeline, #year-arrow {
+    opacity: 0.9;
+    cursor: all-scroll;
+    transition-duration: 0.5s;
+}
+
+
+.slide {
+    width: 100vw;
+    height: 100vh;
+    background-color: #222;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 50vh 50vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition-duration: 0.5s;
+    z-index: -1;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+    animation: backgroundMove 60s linear infinite;
+}
+
+@keyframes backgroundMove {
+  from {background-position: bottom left;}
+  to {background-position: top right;}
+}
+
+
+.left-half, .right-half, .top-left, .bottom-left, .top-right, .bottom-right {
+    margin: 15px;
+    padding: 20px;
+
+    color: white;
+    font-size: 22px;
+    font-family: Caslon;
+ 
+    background: rgba(0, 0, 0, 0.6);
+    max-height: calc(100vh - 150px);
+}
+
+.left-half {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.right-half {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.top-left {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+.bottom-left {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+.top-right {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+.bottom-right {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+.date-display {
+    color: black;
+    font-size: 64px;
+    background: none !important;
+}
+
+.date-display.default-color {
+    color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    font-style: bold;
+}
