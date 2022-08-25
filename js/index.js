@@ -15,7 +15,7 @@ const timeIntervalWidth = 120;
 const backgroundColor = '#000';
 const foregroundColor = '#fff'
 const font = '20px Roboto';
-const inputLag = 1000; // in milliseconds, disables scroll detection for this amount of time after a scroll is detected
+const inputLag = 500; // in milliseconds, disables scroll detection for this amount of time after a scroll is detected
 
 // Don't mess with this, variables assigned at runtime
 canvas.width = innerWidth;
